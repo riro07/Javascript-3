@@ -1,5 +1,5 @@
 /*
-
+*/
 console.time("time");
 
 if(2+2 == 4){
@@ -17,6 +17,7 @@ console.log("---------------------------------------------------------")
 
 //document.body.addEventListener("dblclick", ()=>console.log("Hola addeventlistener!!"));
 
+// Objeto Date
 
 console.log(Date());
 
@@ -47,7 +48,10 @@ console.log(Date.now());
 
 let cumpleanios = new Date(1997, 1, 07);
 console.log(cumpleanios);
-*/
+
+console.log("------------------------------------------------------------")
+
+// objeto Math
 
 console.log(Math);
 console.log(Math.PI);
@@ -72,3 +76,77 @@ console.log(Math.random());
 // Para generar un numero aleatorio entre 0 y el que quieras
 // En especifico va a redondear un numero aleatorio entre 0 y 1000
 console.log(Math.round(Math.random()*1000));
+
+console.log("------------------------------------------------------------")
+
+// Operador de Cortocircuito
+/*
+    Cortocircuito OR - cuando el valor de la izquierda en la expresión siempre pueda validar a true,
+    es el valor que se cargará por defecto
+
+    Cortocircuito AND - cuando el valor de la izquierda en la expresión siempre pueda validar a false,
+    es el valor que se cargará por defecto (si es true carga la derecha)
+*/
+
+function saludar (nombre){
+    nombre = nombre || "Desconocido";
+    console.log("Hola "+nombre);
+}
+
+saludar("Gabriel");
+saludar();
+
+console.log(true||"Valor de la derecha");
+console.log(10||"Valor de la derecha");
+console.log(-10||"Valor de la derecha");
+console.log("Valor izquierda"||"Valor de la derecha");
+console.log([]||"Valor de la derecha");
+console.log({}||"Valor de la derecha");
+console.log("------------------------------------------------------------")
+console.log(false||"Valor de la derecha");
+console.log(0||"Valor de la derecha");
+console.log(undefined||"Valor de la derecha");
+console.log(null||"Valor de la derecha");
+console.log(""||"Valor de la derecha");
+console.log("------------------------------------------------------------")
+console.log(true&&"Valor de la derecha");
+console.log(10&&"Valor de la derecha");
+console.log(-10&&"Valor de la derecha");
+console.log("Valor izquierda"&&"Valor de la derecha");
+console.log([]&&"Valor de la derecha");
+console.log({}&&"Valor de la derecha");
+console.log("------------------------------------------------------------")
+console.log(false&&"Valor de la derecha");
+console.log(0&&"Valor de la derecha");
+console.log(undefined&&"Valor de la derecha");
+console.log(null&&"Valor de la derecha");
+console.log(""&&"Valor de la derecha");
+
+console.log("------------------------------------------------------------")
+
+// Practicas
+
+function pedirHora (){
+    let hora = new Date();
+    
+    console.log(`la hora es: ${hora.toLocaleTimeString()}`);
+}
+
+pedirHora();
+
+function pedirFecha (){
+    let fecha = new Date();
+    console.log("La fecha es: "+fecha.toLocaleDateString());
+}
+
+pedirFecha();
+
+const NUMEROALEATORIO = a =>{
+    if(isNaN(a)){
+        console.log("Hubo un error");
+    }else{        
+        console.log(`El numero aleatorio entre 0 y ${a}: ${Math.round(Math.random()*a)}`);
+    }
+}
+
+NUMEROALEATORIO(165)
