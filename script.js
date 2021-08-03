@@ -17,7 +17,7 @@ console.log("---------------------------------------------------------")
 
 //document.body.addEventListener("dblclick", ()=>console.log("Hola addeventlistener!!"));
 
-// Objeto Date
+// Objeto Date ----------------------------------------------------------------------------------
 
 console.log(Date());
 
@@ -51,7 +51,7 @@ console.log(cumpleanios);
 
 console.log("------------------------------------------------------------")
 
-// objeto Math
+// objeto Math -----------------------------------------------------------------------------------
 
 console.log(Math);
 console.log(Math.PI);
@@ -79,7 +79,7 @@ console.log(Math.round(Math.random()*1000));
 
 console.log("------------------------------------------------------------")
 
-// Operador de Cortocircuito
+// Operador de Cortocircuito -----------------------------------------------------------------------
 /*
     Cortocircuito OR - cuando el valor de la izquierda en la expresión siempre pueda validar a true,
     es el valor que se cargará por defecto
@@ -149,4 +149,71 @@ const NUMEROALEATORIO = a =>{
     }
 }
 
-NUMEROALEATORIO(165)
+NUMEROALEATORIO(165);
+
+
+function valorLogico(a){
+    if(isNaN(a)){
+        console.log("Hubo un error");    
+    }else{
+        let numero = a;
+        let logicaSign = Math.sign(a);
+        console.log(`El numero ingresado es ${numero}: Math.sign => ${logicaSign}`)
+    }
+}
+
+valorLogico(10);
+
+// Cortocicuito or y and
+
+function pedidos(a){
+
+    let validacion = a == undefined ? false : "Llevar pedido: "+b;
+    let pedidoCliente = validacion || "Llevarle la carta al cliente";
+    console.log(pedidoCliente);
+
+}
+
+pedidos();
+
+function pedidoNoHay(a){
+    let pedidoCliente = a == "sprite" && "7UP";
+    console.log("ofrecer: "+pedidoCliente); 
+}
+
+pedidoNoHay("sprite");
+
+console.log("------------------------------------------------------------")
+
+//alert, confirm, prompt ----------------------------------------------------------------------------
+
+//let alerta = alert("Hola esto es una alerta"), 
+//confirmacion = confirm("Hola esto es una confirmacion"), 
+//avisoPrompt = prompt("Ingrese un valor");
+
+//console.log(alerta);
+//console.log(confirmacion);
+//console.log(avisoPrompt);
+
+// EXPRECIONES REGULARES --------------------------------------------------------------------------
+
+/*
+    Expresiones Regulares 
+        Son una secuencia de caracteres que forma un patrón de busqueda, principalmente utilizada 
+        para la busqueda de patrones de cadenas de caracteres.
+        https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
+        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+*/
+
+let cadena = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore lorem eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+// lorem es la palabra que esta buscando. ig(comodines): la i indica que en su busqueda ignore las mayusculas. la g busca el siguiente lorem, ignora el primero
+let expReg = new RegExp("lorem", "ig");
+console.log(expReg.test(cadena));
+console.log(expReg.exec(cadena));
+
+//{} => rango de repetición
+let expReg2 = /lorem{1}/ig;
+console.log(expReg2.test(cadena));
+console.log(expReg2.exec(cadena));
+
+
