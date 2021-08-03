@@ -1,5 +1,5 @@
 /*
-*/
+
 console.time("time");
 
 if(2+2 == 4){
@@ -80,13 +80,13 @@ console.log(Math.round(Math.random()*1000));
 console.log("------------------------------------------------------------")
 
 // Operador de Cortocircuito -----------------------------------------------------------------------
-/*
-    Cortocircuito OR - cuando el valor de la izquierda en la expresión siempre pueda validar a true,
-    es el valor que se cargará por defecto
 
-    Cortocircuito AND - cuando el valor de la izquierda en la expresión siempre pueda validar a false,
-    es el valor que se cargará por defecto (si es true carga la derecha)
-*/
+//    Cortocircuito OR - cuando el valor de la izquierda en la expresión siempre pueda validar a true,
+//    es el valor que se cargará por defecto
+
+//    Cortocircuito AND - cuando el valor de la izquierda en la expresión siempre pueda validar a false,
+//    es el valor que se cargará por defecto (si es true carga la derecha)
+
 
 function saludar (nombre){
     nombre = nombre || "Desconocido";
@@ -197,13 +197,13 @@ console.log("------------------------------------------------------------")
 
 // EXPRECIONES REGULARES --------------------------------------------------------------------------
 
-/*
-    Expresiones Regulares 
-        Son una secuencia de caracteres que forma un patrón de busqueda, principalmente utilizada 
-        para la busqueda de patrones de cadenas de caracteres.
-        https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
-        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
-*/
+
+//    Expresiones Regulares 
+//        Son una secuencia de caracteres que forma un patrón de busqueda, principalmente utilizada 
+//        para la busqueda de patrones de cadenas de caracteres.
+//        https://es.wikipedia.org/wiki/Expresi%C3%B3n_regular
+//        https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions
+
 
 let cadena = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore lorem eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 // lorem es la palabra que esta buscando. ig(comodines): la i indica que en su busqueda ignore las mayusculas. la g busca el siguiente lorem, ignora el primero
@@ -216,4 +216,44 @@ let expReg2 = /lorem{1}/ig;
 console.log(expReg2.test(cadena));
 console.log(expReg2.exec(cadena));
 
+console.log("------------------------------------------------------------")
 
+*/
+
+// FUNCIONES ANÓNIMAS AUTOEJECUTABLES --------------------------------------------------------------
+
+// Encapsula una función anonima que se auto ejecuta. Esta encapsulación protege el codigo de acciones
+// externas
+
+(function(){
+    console.log("Mi primer IIFE");
+})();
+
+(function(d, w, c){
+    console.log("Mi segunda IIFE");
+    console.log(d);
+    console.log(w);
+    c.log("Este es un console.log");
+})(document, window, console);
+
+//Formas de escribir las funciones anónimas autoejecutables 
+
+(function(){
+    console.log("Versión Clásica");
+})();
+
+//La Clockford (javascript the good parts) libro
+
+((function(){
+    console.log("versíon Clockford")
+})());
+
+// Unaria
++function (){
+    console.log("versíon Unaria");
+}();
+
+//Facebook
+!function (){
+    console.log("versíon Facebook");
+}();
