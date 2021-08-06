@@ -1,3 +1,4 @@
+import miNombre, {sumar, Calculadora} from "./Modulos.js" 
 /*
 
 console.time("time");
@@ -257,3 +258,20 @@ console.log("------------------------------------------------------------")
 !function (){
     console.log("versíon Facebook");
 }();
+
+
+// Módulos ( import / export )
+
+// Para poder exportar modulos hay que comenzar especificando en el index.html el "type="module"" 
+// en la parte donde se importa el archivo.js. Esto avisa al navegador que va a tener que ejecutar
+// codigo ES6 y los navegadores que no lo soporten no cargen el archivo en vano. Sino ejecuten otro 
+// archivo con el js previo a ES6 puro. En este caso ese archivo debe llevar "nomodule" en ves de 
+// "type="module"".
+
+sumar(3, 5);
+
+let restar = new Calculadora(5, 3);
+
+restar;
+
+console.log(miNombre);
